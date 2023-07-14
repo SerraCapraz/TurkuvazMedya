@@ -23,9 +23,12 @@ class loginCntrl extends Controller
             if($user->password == $password) {
                 return view("homepage");
             }
+            else {
+                return redirect()->back();
+            }
         }
         else {
-            return back()->with("This username is not registered!");
+            return back();
         }
     }
 

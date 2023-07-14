@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
 </head>
+<h1>Login</h1>
 <body>
 @if($errors->any())
 <ul>
@@ -16,7 +17,7 @@
 </ul>
 @endif
 
-<form action="{{route("login")}}" method="post" >
+<form action="{{route("homepage")}}" method="post" >
 @csrf
 
 <label>Username</label><br><br>
