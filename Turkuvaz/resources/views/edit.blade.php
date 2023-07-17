@@ -17,7 +17,7 @@
     </ul>
 @endif
 
-<form>
+<form action="{{route("editPassword",["username"=>$user->username])}}" method="post">
     @csrf
 
     <label>Username</label><br><br>

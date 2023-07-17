@@ -18,24 +18,63 @@ class ListCntrl extends Controller
     public function liste() {
         $data=Login::get()->all();
         return view("list",compact("data"));
-        /*
-        foreach ($data as $key => $value) {
-            echo $value->id." ".$value->metin;
-            echo "<br>";
-        }*/
+
     }
 
-    public function displayEdit() {
-        return view("edit");
-    }
-
-    public function displayDelete() {
-        return view("delete");
-    }
 
     public function edit($username) {
         $user=Login::where("username","=",$username)->first();
         return view("edit",compact("user"));
+    }
+
+    public function editPassword(Request $request, $username) {
+
+        $request->validate([
+            "username"=>"alpha_num:ascii",
+            "usertitle"=>"",
+            "password"=>"min:6|nullable",
+        ]);
+
+        if(!($request->username == $username)) {
+            $newuser = Login::where("username","=",$request->username)->first();
+            if(!($newuser == null)) {
+                return back();
+            }
+        }
+        $usernamereq = $request->username;
+        $usertitle = $request->usertitle;
+        $password = $request->password;
+
+        //$user = Login::where("username","=",$username)->first();
+
+        if($password == null) {
+            Login::where("username","=",$username)->update([
+                "username"=>$usernamereq,
+                "usertitle"=>$usertitle,
+
+            ]);
+        }
+        else {
+            Login::where("username","=",$username)->update([
+                "username"=>$usernamereq,
+                "usertitle"=>$usertitle,
+                "password"=>$password,
+
+            ]);
+        }
+        /*
+        Login::where("username","=",$username)->update([
+            "username"=>$usernamereq,
+            "usertitle"=>$usertitle,
+            "password"=>$password,
+        ]);*/
+
+
+        return view("homepage");
+    }
+
+    public function displayDelete() {
+
     }
 
 

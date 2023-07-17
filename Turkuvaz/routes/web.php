@@ -25,7 +25,8 @@ Route::get("/user", function(){return view("user"); })->name("user");
 Route::post("/list", [ListCntrl::class, "display3"])->name("list");
 Route::get("/list", [ListCntrl::class, "liste"]);
 Route::get("/edit/{username}", [listCntrl::class, "edit"])->name("edit");
-Route::get("/delete/{user}", [ListCntrl::class, "displayDelete"])->name("delete");
+Route::post("/edit/{username}", [listCntrl::class, "editPassword"])->name("editPassword");
+Route::get("/delete/{username}", [ListCntrl::class, "displayDelete"])->name("delete");
 
 
 
