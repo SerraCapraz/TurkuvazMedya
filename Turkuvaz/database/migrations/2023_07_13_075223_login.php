@@ -18,6 +18,7 @@ class Login extends Migration
             $table->text("username");
             $table->text("usertitle");
             $table->text("password");
+            $table->softDeletes();
             $table->timestamps();
         });
 

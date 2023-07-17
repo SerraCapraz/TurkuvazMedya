@@ -16,7 +16,8 @@ class ListCntrl extends Controller
     }
 
     public function liste() {
-        $data=Login::get()->all();
+        //$data=Login::withTrashed()->get();
+        $data=Login::all();
         return view("list",compact("data"));
 
     }
@@ -69,12 +70,19 @@ class ListCntrl extends Controller
             "password"=>$password,
         ]);*/
 
-
-        return view("homepage");
+        $data=Login::all();
+        return view("list",compact("data"));
     }
 
-    public function displayDelete() {
+    public function delete($username) {
+        $user=Login::where("username","=",$username)->first();
+        return view("delete",compact("user"));
+    }
 
+    public function deleteFunction($username) {
+        Login::where("username","=",$username)->delete();
+        $data=Login::all();
+        return view("list",compact("data"));
     }
 
 

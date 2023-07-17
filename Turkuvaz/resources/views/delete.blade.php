@@ -17,15 +17,15 @@
     </ul>
 @endif
 
-<form action="{{route("homepage")}}" method="post" >
+<form action="{{route("deleteFunction",["username"=>$user->username])}}" method="post" >
     @csrf
 
     <label>Username</label><br><br>
-    <input type="text" name="username"><br><br>
+    <input type="text" name="username" value="{{$user->username}}"><br><br>
     <label>User Title</label><br><br>
-    <input type="text" name="usertitle"><br><br>
+    <input type="text" name="usertitle" value="{{$user->usertitle}}"><br><br>
     <label>Password</label><br><br>
-    <input type="text" name="password"><br><br><br>
+    <input type="password" name="password" value="{{$user->password}}"><br><br><br>
     <input type="submit" name="delete" value="Delete"><br><br>
 
 

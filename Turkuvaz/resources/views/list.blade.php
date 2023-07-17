@@ -31,7 +31,7 @@
             <td>{{$d->usertitle}}</td>
             <td>{{$d->password}}</td>
             <td><a href="{{url("edit/".$d->username)}}">Edit</a></td>
-            <td><a href="{{url("delete",$d->username)}}">Delete</a></td>
+            <td><a href="{{url("delete/".$d->username)}}">Delete</a></td>
         </tr>
     @endforeach
     </tbody>
