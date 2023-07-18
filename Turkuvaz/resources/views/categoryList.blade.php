@@ -33,7 +33,7 @@
                 <td>{{$cd->categorydescription}}</td>
                 <td>{{$cd->categorystatus}}</td>
                 <td><a href="{{url("editCategory/".$cd->categorytitle)}}">Edit</a></td>
-                <td><a href="{{url("delete/".$cd->categorytitle)}}">Delete</a></td>
+                <td><a href="{{url("deleteCategory/".$cd->categorytitle)}}">Delete</a></td>
             </tr>
         @endforeach
         </tbody>

@@ -79,4 +79,15 @@ class CategoryCntrl extends Controller
         $categorydata=Category::all();
         return view("categoryList",compact("categorydata"));
     }
+
+    public function fillDeleteCategory($categorytitle) {
+        $category_var=Category::where("categorytitle","=",$categorytitle)->first();
+        return view("deleteCategory",compact("category_var"));
+    }
+
+    public function deleteCategory($categorytitle) {
+        Category::where("categorytitle","=",$categorytitle)->delete();
+        $categorydata=Category::all();
+        return view("categoryList",compact("categorydata"));
+    }
 }

@@ -42,4 +42,6 @@ Route::post("/categoryList", [CategoryCntrl::class, "displayList"])->name("categ
 Route::get("/categoryList", [CategoryCntrl::class, "categoryListe"]);
 Route::get("/editCategory/{categorytitle}", [CategoryCntrl::class, "fillEditCategory"])->name("fillEditCategory");
 Route::post("/editCategory/{categorytitle}", [CategoryCntrl::class, "editCategory"])->name("editCategory");
+Route::get("/deleteCategory/{categorytitle}", [CategoryCntrl::class, "fillDeleteCategory"])->name("fillDeleteCategory");
+Route::post("/deleteCategory/{categorytitle}}", [CategoryCntrl::class, "deleteCategory"])->name("deleteCategory");
 
