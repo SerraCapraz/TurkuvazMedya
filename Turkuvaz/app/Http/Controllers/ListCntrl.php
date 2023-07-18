@@ -46,7 +46,6 @@ class ListCntrl extends Controller
         $usertitle = $request->usertitle;
         $password = $request->password;
 
-        //$user = Login::where("username","=",$username)->first();
 
         if($password == null) {
             User::where("username","=",$username)->update([

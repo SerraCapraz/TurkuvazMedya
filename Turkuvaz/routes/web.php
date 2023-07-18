@@ -40,4 +40,6 @@ Route::get("/addCategory", [CategoryCntrl::class, "display"])->name("addCategory
 Route::post("/addCategory", [CategoryCntrl::class, "add"])->name("categoryAdd");
 Route::post("/categoryList", [CategoryCntrl::class, "displayList"])->name("categoryList");
 Route::get("/categoryList", [CategoryCntrl::class, "categoryListe"]);
+Route::get("/editCategory/{categorytitle}", [CategoryCntrl::class, "fillEditCategory"])->name("fillEditCategory");
+Route::post("/editCategory/{categorytitle}", [CategoryCntrl::class, "editCategory"])->name("editCategory");
 
