@@ -15,9 +15,10 @@ class Categories extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->text("categoryTitle");
-            $table->text("categoryDescription");
-            $table->text("status");
+            $table->text("categorytitle");
+            $table->text("categorydescription");
+            $table->text("categorystatus");
+            $table->softDeletes();
             $table->timestamps();
         });
     }

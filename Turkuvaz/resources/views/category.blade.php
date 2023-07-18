@@ -9,7 +9,7 @@
 </head>
 <body>
 <a href="{{route("addCategory")}}">Add New Category</a><br><br>
-<a href="{{route("categoryList")}}">List</a>
+<a href="{{route("categoryList")}}">Category List</a>
 
 </body>
 </html>

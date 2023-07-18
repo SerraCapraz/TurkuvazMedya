@@ -38,6 +38,6 @@ Route::get("/category", function(){return view("category"); })->name("category")
 Route::post("/category", function(){return view("category"); })->name("categoryPost");
 Route::get("/addCategory", [CategoryCntrl::class, "display"])->name("addCategory");
 Route::post("/addCategory", [CategoryCntrl::class, "add"])->name("categoryAdd");
-Route::get("/categoryList", [CategoryCntrl::class, "displayList"])->name("categoryList");
-
+Route::post("/categoryList", [CategoryCntrl::class, "displayList"])->name("categoryList");
+Route::get("/categoryList", [CategoryCntrl::class, "categoryListe"]);
 

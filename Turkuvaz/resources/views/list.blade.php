@@ -34,7 +34,7 @@
                 <td>{{$i++}}</td>
                 <td>{{$d->username}}</td>
                 <td>{{$d->usertitle}}</td>
-                <td>{{$d->password}}  222</td>
+                <td>{{$d->password}}</td>
                 <td><a href="{{url("edit/".$d->username)}}">Edit</a></td>
                 <td><a href="{{url("delete/".$d->username)}}">Delete</a></td>
             </tr>

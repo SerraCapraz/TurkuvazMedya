@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bilgi;
 use App\Models\iletisimModel;
 use Illuminate\Http\Request;
 use App\Models\Category;
@@ -21,11 +22,11 @@ class CategoryCntrl extends Controller
 
         $categorytitle = $request->categorytitle;
         $categorydescription = $request->categorydescription;
-        $status = $request->categorystatus;
+        $categorystatus = $request->categorystatus;
 
         Category::create(["categorytitle"=>$categorytitle,
             "categorydescription"=>$categorydescription,
-            "status"=>$status,
+            "categorystatus"=>$categorystatus,
 
         ]);
         return redirect()->route("category");
@@ -34,5 +35,11 @@ class CategoryCntrl extends Controller
 
     public function displayList() {
         return view("categoryList");
+    }
+
+    public function categoryListe() {
+        $categorydata=Category::all();
+        return view("categoryList",compact("categorydata"));
+
     }
 }

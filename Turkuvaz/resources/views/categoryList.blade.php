@@ -9,16 +9,15 @@
 </head>
 <body>
 <h1>List of Categories</h1>
-<form action="{{Route("deleteAllSelected")}}" method="post">
+<form>
     @csrf
     <table class="table">
         <thead>
         <tr>
-            <th></th>
             <th>#</th>
-            <th>Name</th>
-            <th>Title</th>
-            <th>Password</th>
+            <th>Category Title</th>
+            <th>Category Description</th>
+            <th>Category Status</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
@@ -27,19 +26,16 @@
         @php
             $i=1;
         @endphp
-        @foreach($data as $d)
-            <tr id="user_ids{{$d->id}}">
-                <td align="center"><input type="checkbox" name="ids[{{$d->id}}]" class="checkBoxClass" id=""
-                                          value="{{$d->id}}"></td>
+        @foreach($categorydata as $cd)
+            <tr id="">
                 <td>{{$i++}}</td>
-                <td>{{$d->username}}</td>
-                <td>{{$d->usertitle}}</td>
-                <td>{{$d->password}}  222</td>
-                <td><a href="{{url("edit/".$d->username)}}">Edit</a></td>
-                <td><a href="{{url("delete/".$d->username)}}">Delete</a></td>
+                <td>{{$cd->categorytitle}}</td>
+                <td>{{$cd->categorydescription}}</td>
+                <td>{{$cd->categorystatus}}</td>
+                <td><a href="{{url("edit/".$cd->categorytitle)}}">Edit</a></td>
+                <td><a href="{{url("delete/".$cd->categorytitle)}}">Delete</a></td>
             </tr>
         @endforeach
-        <button type="submit">Delete All Selected</button><br><br>
         </tbody>
     </table>
 
