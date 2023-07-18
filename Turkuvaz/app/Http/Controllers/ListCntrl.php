@@ -17,14 +17,14 @@ class ListCntrl extends Controller
 
     public function liste() {
         //$data=Login::withTrashed()->get();
-        $data=Login::all();
+        $data=User::all();
         return view("list",compact("data"));
 
     }
 
 
     public function edit($username) {
-        $user=Login::where("username","=",$username)->first();
+        $user=User::where("username","=",$username)->first();
         return view("edit",compact("user"));
     }
 
@@ -37,7 +37,7 @@ class ListCntrl extends Controller
         ]);
 
         if(!($request->username == $username)) {
-            $newuser = Login::where("username","=",$request->username)->first();
+            $newuser = User::where("username","=",$request->username)->first();
             if(!($newuser == null)) {
                 return back();
             }
@@ -49,14 +49,14 @@ class ListCntrl extends Controller
         //$user = Login::where("username","=",$username)->first();
 
         if($password == null) {
-            Login::where("username","=",$username)->update([
+            User::where("username","=",$username)->update([
                 "username"=>$usernamereq,
                 "usertitle"=>$usertitle,
 
             ]);
         }
         else {
-            Login::where("username","=",$username)->update([
+            User::where("username","=",$username)->update([
                 "username"=>$usernamereq,
                 "usertitle"=>$usertitle,
                 "password"=>$password,
@@ -70,20 +70,28 @@ class ListCntrl extends Controller
             "password"=>$password,
         ]);*/
 
-        $data=Login::all();
+        $data=User::all();
         return view("list",compact("data"));
     }
 
     public function delete($username) {
-        $user=Login::where("username","=",$username)->first();
+        $user=User::where("username","=",$username)->first();
         return view("delete",compact("user"));
     }
 
     public function deleteFunction($username) {
-        Login::where("username","=",$username)->delete();
-        $data=Login::all();
+        User::where("username","=",$username)->delete();
+        $data=User::all();
         return view("list",compact("data"));
     }
+
+    public function deleteAll(Request $request) {
+        $ids=$request->ids;
+        User::whereIn("id",$ids)->delete();
+        return redirect()->route("list");
+    }
+
+
 
 
 

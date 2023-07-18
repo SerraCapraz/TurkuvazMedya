@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\loginCntrl;
 use App\Http\Controllers\registerCntrl;
 use App\Http\Controllers\ListCntrl;
+use App\Http\Controllers\CategoryCntrl;
 
 
 /*
@@ -28,11 +29,15 @@ Route::get("/edit/{username}", [listCntrl::class, "edit"])->name("edit");
 Route::post("/edit/{username}", [listCntrl::class, "editPassword"])->name("editPassword");
 Route::get("/delete/{username}", [ListCntrl::class, "delete"])->name("delete");
 Route::post("/delete/{username}", [listCntrl::class, "deleteFunction"])->name("deleteFunction");
+Route::get("/listofAll", [ListCntrl::class, "liste"]);
+Route::post("/deleteAllSelected",[ListCntrl::class,"deleteAll"])->name("deleteAllSelected");
 
 
+//category
+Route::get("/category", function(){return view("category"); })->name("category");
+Route::post("/category", function(){return view("category"); })->name("categoryPost");
+Route::get("/addCategory", [CategoryCntrl::class, "display"])->name("addCategory");
+Route::post("/addCategory", [CategoryCntrl::class, "add"])->name("categoryAdd");
+Route::get("/categoryList", [CategoryCntrl::class, "displayList"])->name("categoryList");
 
 
-
-
-
-//Route::get("/login-user", [loginCntrl::class, "loginUser"])->name("login-user");

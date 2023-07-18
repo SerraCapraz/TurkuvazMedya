@@ -5,10 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User List</title>
+    <title>Category List</title>
 </head>
 <body>
-<h1>List of Users</h1>
+<h1>List of Categories</h1>
 <form action="{{Route("deleteAllSelected")}}" method="post">
     @csrf
     <table class="table">

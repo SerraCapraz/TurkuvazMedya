@@ -32,7 +32,4 @@ class loginCntrl extends Controller
         }
     }
 
-    public function dashboard() {
-        return "welcome";
-    }
 }
