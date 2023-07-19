@@ -50,3 +50,8 @@ Route::post("/deleteCategory/{categorytitle}}", [CategoryCntrl::class, "deleteCa
 Route::get("/product", function(){return view("product"); })->name("product");
 Route::get("/addProduct", [ProductCntrl::class, "display"])->name("addProduct");
 Route::post("/addProduct", [ProductCntrl::class, "add"])->name("productAdd");
+Route::get("/productList", [ProductCntrl::class, "productListe"])->name("productList");
+Route::get("/editProduct/{producttitle}", [ProductCntrl::class, "fillEditProduct"])->name("fillEditProduct");
+Route::post("/editProduct/{producttitle}", [ProductCntrl::class, "editProduct"])->name("editProduct");
+Route::get("/deleteProduct/{producttitle}", [ProductCntrl::class, "fillDeleteProduct"])->name("fillDeleteProduct");
+Route::post("/deleteProduct/{producttitle}}", [ProductCntrl::class, "deleteProduct"])->name("deleteProduct");
