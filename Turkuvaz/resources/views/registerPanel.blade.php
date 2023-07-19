@@ -7,8 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Register</title>
 </head>
-<h1>Register</h1>
 <body>
+<a href="{{route("homepage")}}">Homepage</a>
+<h1>Register</h1>
 
 <form action="{{route("user")}}" method="post" >
     @csrf
@@ -30,6 +31,7 @@
     </div>
     @enderror
     <input type="submit" name="gönder" value="Sign in"><br><br>
+
 
 
 </form>
