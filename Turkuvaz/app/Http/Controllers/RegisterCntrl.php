@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\iletisimModel;
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Models\Login;
 
-class registerCntrl extends Controller
+
+class RegisterCntrl extends Controller
 {
     public function display() {
         return view("registerPanel");
@@ -23,12 +24,12 @@ class registerCntrl extends Controller
         $usertitle = $request->usertitle;
         $password = $request->password;
 
-        Login::create(["username"=>$username,
+        User::create(["username"=>$username,
             "usertitle"=>$usertitle,
             "password"=>$password,
 
         ]);
-        return view("homepage");
+        return view("user");
 
     }
 }

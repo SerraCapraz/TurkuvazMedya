@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Login extends Migration
+class Products extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class Login extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->text("username");
-            $table->text("usertitle");
-            $table->text("password");
+            $table->text("producttitle");
+            $table->text("productcategoryid")->nullable();
+            $table->text("barcode");
+            $table->text("productstatus");
             $table->softDeletes();
             $table->timestamps();
         });
-
     }
 
     /**
@@ -31,6 +31,6 @@ class Login extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('products');
     }
 }

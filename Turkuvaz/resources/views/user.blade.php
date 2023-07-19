@@ -8,6 +8,8 @@
     <title>User</title>
 </head>
 <body>
+<a href="{{route("homepage")}}">Homepage</a>
+<h1>User</h1>
 <a href="{{route("register")}}">Add New User</a><br><br>
 <a href="{{route("list")}}">List</a>
 
