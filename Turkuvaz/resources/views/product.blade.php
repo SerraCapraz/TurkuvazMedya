@@ -5,13 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Homepage</title>
+    <title>Category</title>
 </head>
 <body>
-<a href="{{route("user")}}">User</a><br><br>
-<a href="{{route("category")}}">Category</a><br><br>
-<a href="{{route("product")}}">Product</a><br><br>
-
+<a href="{{route("addProduct")}}">Add New Product</a><br><br>
+<a href="{{route("categoryList")}}">Product List</a>
 
 </body>
 </html>

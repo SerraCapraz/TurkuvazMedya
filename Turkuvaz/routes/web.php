@@ -5,6 +5,7 @@ use App\Http\Controllers\loginCntrl;
 use App\Http\Controllers\registerCntrl;
 use App\Http\Controllers\ListCntrl;
 use App\Http\Controllers\CategoryCntrl;
+use App\Http\Controllers\ProductCntrl;
 
 
 /*
@@ -45,3 +46,7 @@ Route::post("/editCategory/{categorytitle}", [CategoryCntrl::class, "editCategor
 Route::get("/deleteCategory/{categorytitle}", [CategoryCntrl::class, "fillDeleteCategory"])->name("fillDeleteCategory");
 Route::post("/deleteCategory/{categorytitle}}", [CategoryCntrl::class, "deleteCategory"])->name("deleteCategory");
 
+//product
+Route::get("/product", function(){return view("product"); })->name("product");
+Route::get("/addProduct", [ProductCntrl::class, "display"])->name("addProduct");
+Route::post("/addProduct", [ProductCntrl::class, "add"])->name("productAdd");
