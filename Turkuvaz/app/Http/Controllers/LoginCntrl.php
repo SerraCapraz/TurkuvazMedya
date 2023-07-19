@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-class loginCntrl extends Controller
+class LoginCntrl extends Controller
 {
 
     public function display2() {
