@@ -8,6 +8,7 @@
     <title>List</title>
 </head>
 <body>
+<a href="{{route("homepage")}}">Homepage</a>
 <h1>List of Users</h1>
 <table class="table">
     <thead><tr>
