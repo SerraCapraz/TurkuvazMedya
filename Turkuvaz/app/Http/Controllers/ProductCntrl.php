@@ -15,7 +15,7 @@ class ProductCntrl extends Controller
 
     public function add(Request $request) {
         $request->validate([
-            "producttitle"=>"required|",
+            "producttitle"=>"required",
             "productcategoryid"=>"required|nullable",
             "barcode"=>"required",
             "productstatus"=>"required",
@@ -60,12 +60,6 @@ class ProductCntrl extends Controller
             "productstatus"=>"required",
         ]);
 
-        if(!($request->producttitle == $producttitle)) {
-            $new_product_var = Product::where("producttitle","=",$request->producttitle)->first();
-            if(!($new_product_var == null)) {
-                return back();
-            }
-        }
         $producttitlereq = $request->producttitle;
         $productcategoryid = $request->productcategoryid;
         $barcode = $request->barcode;

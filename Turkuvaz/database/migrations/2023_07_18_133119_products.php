@@ -16,7 +16,7 @@ class Products extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->text("producttitle");
-            $table->text("productcategoryid");
+            $table->text("productcategoryid")->nullable();
             $table->text("barcode");
             $table->text("productstatus");
             $table->softDeletes();

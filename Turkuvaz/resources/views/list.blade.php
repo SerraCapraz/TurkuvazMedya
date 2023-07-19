@@ -24,14 +24,11 @@
         </tr>
         </thead>
         <tbody>
-        @php
-            $i=1;
-        @endphp
         @foreach($data as $d)
             <tr id="user_ids{{$d->id}}">
                 <td align="center"><input type="checkbox" name="ids[{{$d->id}}]" class="checkBoxClass" id=""
                                           value="{{$d->id}}"></td>
-                <td>{{$i++}}</td>
+                <td>{{$d->id}}</td>
                 <td>{{$d->username}}</td>
                 <td>{{$d->usertitle}}</td>
                 <td>{{$d->password}}</td>

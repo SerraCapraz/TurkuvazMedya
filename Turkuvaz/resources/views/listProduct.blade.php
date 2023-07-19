@@ -25,11 +25,9 @@
         </tr>
         </thead>
         <tbody>
-        @php
-            $i=1;
-        @endphp
+
         @foreach($productdata as $pd)
-                <td>{{$i++}}</td>
+                <td>{{$pd->id}}</td>
                 <td>{{$pd->producttitle}}</td>
                 <td>{{$pd->productcategoryid}}</td>
                 <td>{{$pd->barcode}}</td>

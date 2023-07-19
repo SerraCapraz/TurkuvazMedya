@@ -23,12 +23,10 @@
         </tr>
         </thead>
         <tbody>
-        @php
-            $i=1;
-        @endphp
+
         @foreach($categorydata as $cd)
             <tr id="">
-                <td>{{$i++}}</td>
+                <td>{{$cd->id}}</td>
                 <td>{{$cd->categorytitle}}</td>
                 <td>{{$cd->categorydescription}}</td>
                 <td>{{$cd->categorystatus}}</td>

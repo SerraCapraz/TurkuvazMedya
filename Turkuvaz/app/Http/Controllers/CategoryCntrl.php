@@ -7,6 +7,7 @@ use App\Models\iletisimModel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Product;
 
 class CategoryCntrl extends Controller
 {
@@ -86,8 +87,13 @@ class CategoryCntrl extends Controller
     }
 
     public function deleteCategory($categorytitle) {
+        $category_var=Category::where("categorytitle","=",$categorytitle)->first();
+        Product::whereIn("productcategoryid",$category_var)->update([
+            "productcategoryid"=>null,
+        ]);
         Category::where("categorytitle","=",$categorytitle)->delete();
         $categorydata=Category::all();
+
         return view("categoryList",compact("categorydata"));
     }
 }
