@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 
 
-class registerCntrl extends Controller
+class RegisterCntrl extends Controller
 {
     public function display() {
         return view("registerPanel");
