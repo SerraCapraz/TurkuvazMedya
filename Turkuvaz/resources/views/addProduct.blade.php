@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add Product</title>
 </head>
-<h1>Add Product</h1>
+
 <body>
+<a href="{{route("homepage")}}">Homepage</a>
+<h1>Add Product</h1>
 
 <form action="{{route("productAdd")}}" method="post" >
     @csrf
