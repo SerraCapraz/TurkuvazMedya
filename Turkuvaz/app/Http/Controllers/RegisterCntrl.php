@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\iletisimModel;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 
 class RegisterCntrl extends Controller
@@ -26,9 +27,10 @@ class RegisterCntrl extends Controller
 
         User::create(["username"=>$username,
             "usertitle"=>$usertitle,
-            "password"=>$password,
+            "password"=> Hash::make($password),
 
         ]);
+
         return view("user");
 
     }
