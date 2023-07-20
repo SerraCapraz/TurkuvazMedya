@@ -8,6 +8,8 @@
     <title>Category</title>
 </head>
 <body>
+<a href="{{route("homepage")}}">Homepage</a>
+<h1>Product</h1>
 <a href="{{route("addProduct")}}">Add New Product</a><br><br>
 <a href="{{route("categoryList")}}">Product List</a>
 
