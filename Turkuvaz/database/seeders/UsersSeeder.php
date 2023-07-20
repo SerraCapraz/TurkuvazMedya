@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use http\Env\Request;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -19,12 +20,20 @@ class UsersSeeder extends Seeder
     public function run()
     {
         $faker=Faker::create();
+        /*
+        $faker->validate([
+            "username"=>"required|alpha_num:ascii|unique:users",
+            "usertitle"=>"required",
+            "password"=>"required|min:6",
+        ]);*/
+
         foreach(range(1,4) as $index) {
             User::create([
                 //"username"=>$faker->word(5),
-                "username"=>$faker->name,
+                //"username"=>$faker->name(),
+                "username"=>$faker->unique()->userName,
                 "usertitle"=>$faker->paragraph(4),
-                "password"=>Hash::make($faker->password),
+                "password"=>Hash::make($faker->password(6)),
             ]);
         }
 
