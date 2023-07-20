@@ -6,6 +6,7 @@ use App\Models\Bilgi;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Login;
+use Illuminate\Support\Facades\Hash;
 
 
 class ListCntrl extends Controller
@@ -58,7 +59,7 @@ class ListCntrl extends Controller
             User::where("username","=",$username)->update([
                 "username"=>$usernamereq,
                 "usertitle"=>$usertitle,
-                "password"=>$password,
+                "password"=>Hash::make($password),
 
             ]);
         }
