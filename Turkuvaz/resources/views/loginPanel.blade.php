@@ -9,23 +9,24 @@
 </head>
 <h1>Login</h1>
 <body>
-@if($errors->any())
-<ul>
-    @foreach($errors->all() as $err)
-    <li>{{$err}}</li>
-    @endforeach
-</ul>
-@endif
 
 <form action="{{route("homepage")}}" method="post" >
 @csrf
 
 <label>Username</label><br><br>
 <input type="text" name="username"><br><br>
-<label>User Title</label><br><br>
-<input type="text" name="usertitle"><br><br>
+    @error("username")
+    <div class="alert alert-danger" style="color:red" role="alert">
+        {{$message}}
+    </div>
+    @enderror
 <label>Password</label><br><br>
 <input type="text" name="password"><br><br><br>
+    @error("password")
+    <div class="alert alert-danger" style="color:red" role="alert">
+        {{$message}}
+    </div>
+    @enderror
 <input type="submit" name="gönder" value="Login"><br><br>
 
 
