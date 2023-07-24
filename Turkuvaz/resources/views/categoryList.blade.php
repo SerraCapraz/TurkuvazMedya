@@ -1,43 +1,41 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Category List</title>
-</head>
-<body>
-<a href="{{route("homepage")}}">Homepage</a>
-<h1>List of Categories</h1>
-<form>
-    @csrf
-    <table class="table">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Category Title</th>
-            <th>Category Description</th>
-            <th>Category Status</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-        </thead>
-        <tbody>
+@extends("layout.master")
 
-        @foreach($categorydata as $cd)
-            <tr id="">
-                <td>{{$cd->id}}</td>
-                <td>{{$cd->categorytitle}}</td>
-                <td>{{$cd->categorydescription}}</td>
-                <td>{{$cd->categorystatus}}</td>
-                <td><a href="{{url("editCategory/".$cd->categorytitle)}}">Edit</a></td>
-                <td><a href="{{url("deleteCategory/".$cd->categorytitle)}}">Delete</a></td>
+@section("title")
+    List of Categories
+@endsection
+
+@section("header")
+    List of Categories
+@endsection
+
+@section("context")
+    <form>
+        @csrf
+        <table class="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Category Title</th>
+                <th>Category Description</th>
+                <th>Category Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
-        @endforeach
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
 
-</form>
-</body>
-</html>
+            @foreach($categorydata as $cd)
+                <tr id="">
+                    <td>{{$cd->id}}</td>
+                    <td>{{$cd->categorytitle}}</td>
+                    <td>{{$cd->categorydescription}}</td>
+                    <td>{{$cd->categorystatus}}</td>
+                    <td><a href="{{url("editCategory/".$cd->categorytitle)}}">Edit</a></td>
+                    <td><a href="{{url("deleteCategory/".$cd->categorytitle)}}">Delete</a></td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+
+    </form>
+@endsection

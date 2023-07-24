@@ -7,31 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
 </head>
-<h1>Login</h1>
 <body>
 
+<h1>Login</h1>
 <form action="{{route("homepage")}}" method="post" >
-@csrf
+    @csrf
 
-<label>Username</label><br><br>
-<input type="text" name="username"><br><br>
+    <label>Username</label><br><br>
+    <input type="text" name="username"><br><br>
     @error("username")
     <div class="alert alert-danger" style="color:red" role="alert">
         {{$message}}
     </div>
     @enderror
-<label>Password</label><br><br>
-<input type="text" name="password"><br><br><br>
+    <label>Password</label><br><br>
+    <input type="text" name="password"><br><br><br>
     @error("password")
     <div class="alert alert-danger" style="color:red" role="alert">
         {{$message}}
     </div>
     @enderror
-<input type="submit" name="gönder" value="Login"><br><br>
+    <input type="submit" name="gönder" value="Login"><br><br>
 
 
 
 </form>
-
 </body>
 </html>
