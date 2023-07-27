@@ -22,7 +22,7 @@
         <label>User Title</label><br><br>
         <input type="text" name="usertitle"><br><br>
         <label>Password</label><br><br>
-        <input type="text" name="password"><br><br><br>
+        <input type="password" name="password"><br><br><br>
         @error("password")
         <div class="alert alert-danger" style="color:red" role="alert">
             {{$message}}

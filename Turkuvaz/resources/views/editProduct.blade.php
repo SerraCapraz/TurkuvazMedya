@@ -17,7 +17,7 @@
         <label>Product Category ID</label><br><br>
         <select name="productcategoryid">
             <@foreach($dataofcategory as $catdata)
-                <option value="{{$catdata->id}}">{{$catdata->categorytitle}}</option>
+                <option value="{{$catdata->id}}">{{$catdata->id}}</option>
             @endforeach
         </select><br><br>
         <label>Barcode</label><br><br>
