@@ -4,14 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class LoginCntrl extends Controller
 {
 
-    public function display2() {
+    public function display() {
         return view("loginPanel");
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect("/");
     }
 
     public function loginUser(Request $request) {
@@ -27,7 +33,8 @@ class LoginCntrl extends Controller
         $user = User::where("username",$username)->first();
         if($user) {
             if(Hash::check($password,$user->password)) {
-                return view("homepage");
+                if (Auth::attempt(["username"=>$request->username,"password"=>$request->password]));
+                return  redirect("/homepage");
             }
             else {
                 $request->validate([

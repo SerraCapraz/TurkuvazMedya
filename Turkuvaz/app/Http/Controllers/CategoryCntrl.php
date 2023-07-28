@@ -12,7 +12,7 @@ use App\Models\Product;
 class CategoryCntrl extends Controller
 {
     public function display() {
-        return view("addCategory");
+        return view("Category.addCategory");
     }
 
     public function add(Request $request) {
@@ -36,18 +36,18 @@ class CategoryCntrl extends Controller
     }
 
     public function displayList() {
-        return view("categoryList");
+        return view("Category.categoryList");
     }
 
     public function categoryListe() {
         $categorydata=Category::all();
-        return view("categoryList",compact("categorydata"));
+        return view("Category.categoryList",compact("categorydata"));
 
     }
 
     public function fillEditCategory($categorytitle) {
         $category_var=Category::where("categorytitle","=",$categorytitle)->first();
-        return view("editCategory",compact("category_var"));
+        return view("Category.editCategory",compact("category_var"));
     }
 
     public function editCategory(Request $request, $categorytitle) {
@@ -78,12 +78,12 @@ class CategoryCntrl extends Controller
         ]);
 
         $categorydata=Category::all();
-        return view("categoryList",compact("categorydata"));
+        return view("Category.categoryList",compact("categorydata"));
     }
 
     public function fillDeleteCategory($categorytitle) {
         $category_var=Category::where("categorytitle","=",$categorytitle)->first();
-        return view("deleteCategory",compact("category_var"));
+        return view("Category.deleteCategory",compact("category_var"));
     }
 
     public function deleteCategory($categorytitle) {
@@ -94,6 +94,6 @@ class CategoryCntrl extends Controller
         Category::where("categorytitle","=",$categorytitle)->delete();
         $categorydata=Category::all();
 
-        return view("categoryList",compact("categorydata"));
+        return view("Category.categoryList",compact("categorydata"));
     }
 }

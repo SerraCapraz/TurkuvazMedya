@@ -12,21 +12,21 @@ use Illuminate\Support\Facades\Hash;
 class ListCntrl extends Controller
 {
 
-    public function display3() {
-        return view("list");
+    public function display() {
+        return view("User.list");
     }
 
     public function liste() {
         //$data=Login::withTrashed()->get();
         $data=User::all();
-        return view("list",compact("data"));
+        return view("User.list",compact("data"));
 
     }
 
 
     public function edit($username) {
         $user=User::where("username","=",$username)->first();
-        return view("edit",compact("user"));
+        return view("User.edit",compact("user"));
     }
 
     public function editPassword(Request $request, $username) {
@@ -71,23 +71,25 @@ class ListCntrl extends Controller
         ]);*/
 
         $data=User::all();
-        return view("list",compact("data"));
+        return view("User.list",compact("data"));
     }
 
     public function delete($username) {
         $user=User::where("username","=",$username)->first();
-        return view("delete",compact("user"));
+        return view("User.delete",compact("user"));
     }
 
     public function deleteFunction($username) {
         User::where("username","=",$username)->delete();
         $data=User::all();
-        return view("list",compact("data"));
+        return view("User.list",compact("data"));
     }
 
     public function deleteAll(Request $request) {
         $ids=$request->ids;
-        User::whereIn("id",$ids)->delete();
+        if(!($ids == null)) {
+            User::whereIn("id",$ids)->delete();
+        }
         return redirect()->route("list");
     }
 

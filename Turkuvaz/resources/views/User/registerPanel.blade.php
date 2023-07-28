@@ -9,7 +9,7 @@
 @endsection
 
 @section("context")
-    <form action="{{route("user")}}" method="post" >
+    <form action="{{route("postUser")}}" method="post" >
         @csrf
 
         <label>Username</label><br><br>

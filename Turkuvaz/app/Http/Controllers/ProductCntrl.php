@@ -10,7 +10,7 @@ class ProductCntrl extends Controller
 {
     public function display() {
         $dataofcategory=Category::all();
-        return view("addProduct",compact("dataofcategory"));
+        return view("Product.addProduct",compact("dataofcategory"));
     }
 
     public function add(Request $request) {
@@ -42,14 +42,14 @@ class ProductCntrl extends Controller
 
     public function productListe() {
         $productdata=Product::all();
-        return view("listProduct",compact("productdata"));
+        return view("Product.listProduct",compact("productdata"));
 
     }
 
     public function fillEditProduct($producttitle) {
         $product_var=Product::where("producttitle","=",$producttitle)->first();
         $dataofcategory=Category::all();
-        return view("editProduct",compact("dataofcategory","product_var"));
+        return view("Product.editProduct",compact("dataofcategory","product_var"));
     }
 
     public function editProduct(Request $request, $producttitle) {
@@ -74,18 +74,18 @@ class ProductCntrl extends Controller
         ]);
 
         $productdata=Product::all();
-        return view("listProduct",compact("productdata"));
+        return view("Product.listProduct",compact("productdata"));
     }
 
     public function fillDeleteProduct($producttitle) {
         $product_var=Product::where("producttitle","=",$producttitle)->first();
-        return view("deleteProduct",compact("product_var"));
+        return view("Product.deleteProduct",compact("product_var"));
     }
 
     public function deleteProduct($producttitle) {
         Product::where("producttitle","=",$producttitle)->delete();
         $productdata=Product::all();
-        return view("listProduct",compact("productdata"));
+        return view("Product.listProduct",compact("productdata"));
     }
 
 

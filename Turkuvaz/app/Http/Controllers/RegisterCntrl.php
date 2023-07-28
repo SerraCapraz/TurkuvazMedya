@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 class RegisterCntrl extends Controller
 {
     public function display() {
-        return view("registerPanel");
+        return view("User.registerPanel");
     }
 
     public function add(Request $request) {
@@ -31,7 +31,7 @@ class RegisterCntrl extends Controller
 
         ]);
 
-        return view("user");
+        return view("User.user");
 
     }
 }

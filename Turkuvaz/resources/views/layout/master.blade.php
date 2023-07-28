@@ -8,7 +8,11 @@
     <title>@yield("title")</title>
 </head>
 <body>
-<a href="{{route("homepage")}}">Homepage</a>
+<div style="display: flex; justify-content: space-between">
+    <a href="{{route("homepage")}}">Homepage</a>
+    <a href="{{route("logout")}}">Logout</a>
+</div>
+
 <h1>@yield("header")</h1>
 @yield("context")
 
