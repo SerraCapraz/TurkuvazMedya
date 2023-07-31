@@ -62,3 +62,6 @@ Route::group(["middleware"=>"auth"],function () {
     Route::post("/deleteProduct/{producttitle}}", [ProductCntrl::class, "deleteProduct"])->name("deleteProduct");
 
 });
+
+
+Route::get("/admin", function(){return view("layout.admin"); });

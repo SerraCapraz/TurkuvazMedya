@@ -9,6 +9,7 @@
 @endsection
 
 @section("context")
-    <a href="{{route("addProduct")}}">Add New Product</a><br><br>
+    <br>
+    <a href="{{route("addProduct")}}">Add New Product</a><br>
     <a href="{{route("productList")}}">Product List</a>
 @endsection
