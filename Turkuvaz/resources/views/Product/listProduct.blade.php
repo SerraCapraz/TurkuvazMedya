@@ -10,7 +10,7 @@
 
 @section("context")
 
-    <form>
+    <form><br>
         @csrf
         <table class="table">
             <thead>
@@ -33,8 +33,8 @@
                 <td>{{$pd->productcategoryid}}</td>
                 <td>{{$pd->barcode}}</td>
                 <td>{{$pd->productstatus}}</td>
-                <td><a href="{{url("editProduct/".$pd->producttitle)}}">Edit</a></td>
-                <td><a href="{{url("deleteProduct/".$pd->producttitle)}}">Delete</a></td>
+                <td><a href="{{url("editProduct/".$pd->producttitle)}}" style="color: #4c0ab8">Edit</a></td>
+                <td><a href="{{url("deleteProduct/".$pd->producttitle)}}" style="color: #4c0ab8">Delete</a></td>
                 </tr>
             @endforeach
             </tbody>

@@ -5,9 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
     <title>Login</title>
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -29,74 +31,45 @@
 </head>
 <body>
 
-<div class="d-flex justify-content-center flex-">
-    <h1>Login</h1>
-    <form action="{{route("homepage")}}" method="post" >
-        @csrf
+<div class="d-flex justify-content-center">
+    <div class="mt-5 w-25">
+        <div class="card p-5 w-100">
+        <form class="d-flex align-items-center flex-column" action="{{route("homepage")}}" method="post">
+            @csrf
 
-        <label>Username</label><br><br>
-        <input type="text" name="username"><br><br>
-        @error("username")
-        <div class="alert alert-danger" style="color:red" role="alert">
-            {{$message}}
-        </div>
-        @enderror
-        <label>Password</label><br><br>
-        <input type="password" name="password"><br><br><br>
-        @error("password")
-        <div class="alert alert-danger" style="color:red" role="alert">
-            {{$message}}
-        </div>
-        @enderror
-        <input type="submit" name="gönder" value="Login"><br><br>
-
-
-
-    </form>
-</div>
-
-<section class="ftco-section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center mb-5">
-                <h2 class="heading-section">Login #08</h2>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-6 col-lg-5">
-                <div class="login-wrap p-4 p-md-5">
-                    <div class="icon d-flex align-items-center justify-content-center">
-                        <span class="fa fa-user-o"></span>
-                    </div>
-                    <h3 class="text-center mb-4">Have an account?</h3>
-                    <form action="#" class="login-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control rounded-left" placeholder="Username" required="">
-                        </div>
-                        <div class="form-group d-flex">
-                            <input type="password" class="form-control rounded-left" placeholder="Password" required="">
-                        </div>
-                        <div class="form-group d-md-flex">
-                            <div class="w-50">
-                                <label class="checkbox-wrap checkbox-primary">Remember Me
-                                    <input type="checkbox" checked="">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="w-50 text-md-right">
-                                <a href="#">Forgot Password</a>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary rounded submit p-3 px-5">Get Started</button>
-                        </div>
-                    </form>
+            <h1>Login</h1><br>
+            <div class="big-user-logo">
+                <i class="fas fa-user-circle" style="font-size:60px"></i>
+            </div><br>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text fas fa-user" id="basic-addon1"></span>
                 </div>
+                <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            </div><br>
+            @error("username")
+            <div class="alert alert-danger" style="color:red" role="alert">
+                {{$message}}
             </div>
+            @enderror
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                </div>
+                <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+            </div><br>
+            @error("password")
+            <div class="alert alert-danger" style="color:red" role="alert">
+                {{$message}}
+            </div>
+            @enderror
+            <input type="submit" name="gönder" value="Login" class="btn btn-primary rounded submit p-3 px-5"
+                   style="background-color: #382063"><br><br>
+            </form>
         </div>
-    </div>
-</section>
 
+    </div>
+</div>
 
 
 <!-- jQuery -->
@@ -127,10 +100,6 @@
 <script src="plugins/summernote/summernote-bs4.min.js"></script>
 <!-- overlayScrollbars -->
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
 </body>

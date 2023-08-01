@@ -9,7 +9,7 @@
 @endsection
 
 @section("context")
-    <form>
+    <form><br>
         @csrf
         <table class="table">
             <thead>
@@ -30,8 +30,8 @@
                     <td>{{$cd->categorytitle}}</td>
                     <td>{{$cd->categorydescription}}</td>
                     <td>{{$cd->categorystatus}}</td>
-                    <td><a href="{{url("editCategory/".$cd->categorytitle)}}">Edit</a></td>
-                    <td><a href="{{url("deleteCategory/".$cd->categorytitle)}}">Delete</a></td>
+                    <td><a href="{{url("editCategory/".$cd->categorytitle)}}" style="color: #4c0ab8">Edit</a></td>
+                    <td><a href="{{url("deleteCategory/".$cd->categorytitle)}}" style="color: #4c0ab8">Delete</a></td>
                 </tr>
             @endforeach
             </tbody>
