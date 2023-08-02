@@ -15,20 +15,20 @@
 
                     <input type="text" name="categorytitle" value="{{$category_var->categorytitle}}" class="form-control"><br><br>
                     @error("categorytitle")
-                    <div class="alert alert-danger" style="color:red" role="alert">
+                    <div class="alert" style="color:red" role="alert">
                         {{$message}}
                     </div>
                     @enderror
                     <input type="text" name="categorydescription" class="form-control"
                            value="{{$category_var->categorydescription}}"><br><br>
                     @error("categorydescription")
-                    <div class="alert alert-danger" style="color:red" role="alert">
+                    <div class="alert" style="color:red" role="alert">
                         {{$message}}
                     </div>
                     @enderror
                     <input type="text" name="categorystatus"  class="form-control" value="{{$category_var->categorystatus}}"><br><br><br>
                     @error("categorystatus")
-                    <div class="alert alert-danger" style="color:red" role="alert">
+                    <div class="alert" style="color:red" role="alert">
                         {{$message}}
                     </div>
                     @enderror

@@ -54,7 +54,7 @@
     <ul class="navbar-nav ml-auto">
         <li class="nav-item d-none d-sm-inline-block">
 
-            <p class="nav-link"><i class="fas fa-user"></i> {{Auth::user()->username}}</p>
+            <p class="nav-link"><i class="fas fa-user"></i>  {{Auth::user()->username}}</p>
         </li>
 
         <li class="nav-item d-none d-sm-inline-block">

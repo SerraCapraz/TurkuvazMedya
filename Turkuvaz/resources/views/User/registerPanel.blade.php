@@ -16,7 +16,7 @@
                     <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Username"
                            aria-describedby="basic-addon1"><br>
                     @error("username")
-                    <div class="alert alert-danger" style="color:red" role="alert">
+                    <div class="alert" style="color:red" role="alert">
                         {{$message}}
                     </div>
                     @enderror
@@ -25,7 +25,7 @@
                     <input type="text" name="password" class="form-control" placeholder="Password" aria-label="Username"
                            aria-describedby="basic-addon1"><br><br>
                     @error("password")
-                    <div class="alert alert-danger" style="color:red" role="alert">
+                    <div class="alert" style="color:red" role="alert">
                         {{$message}}
                     </div>
                     @enderror
